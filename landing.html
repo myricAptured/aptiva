@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptiva - Find Your Perfect Career Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px);
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-compass text-purple-600 text-2xl mr-2"></i>
+                    <span class="text-2xl font-bold text-gray-900">Aptiva</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="landing.html" class="text-purple-600 font-medium">Home</a>
+                    <a href="quiz.html" class="text-gray-600 hover:text-purple-600 transition">Take Quiz</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-purple-600 transition">Dashboard</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-purple-600 transition">Community</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="quiz.html" class="hidden md:block bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition">
+                        Get Started
+                    </a>
+                    <button class="md:hidden text-gray-600" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        Discover Your Perfect Career Path
+                    </h1>
+                    <p class="text-xl mb-8 text-purple-100">
+                        AI-powered aptitude testing helps you find courses, careers, and universities that match your unique strengths and interests.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="quiz.html" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition text-center">
+                            <i class="fas fa-rocket mr-2"></i>Take the Aptitude Quiz
+                        </a>
+                        <a href="#features" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition text-center">
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-6 text-sm">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>No signup required</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>10 minutes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-white/20 p-6 rounded-xl">
+                                <i class="fas fa-users text-4xl mb-3"></i>
+                                <h3 class="text-2xl font-bold">50K+</h3>
+                                <p class="text-purple-100">Students Guided</p>
+                            </div>
+                            <div class="bg-white/20 p-6 rounded-xl">
+                                <i class="fas fa-university text-4xl mb-3"></i>
+                                <h3 class="text-2xl font-bold">200+</h3>
+                                <p class="text-purple-100">Universities</p>
+                            </div>
+                            <div class="bg-white/20 p-6 rounded-xl">
+                                <i class="fas fa-briefcase text-4xl mb-3"></i>
+                                <h3 class="text-2xl font-bold">500+</h3>
+                                <p class="text-purple-100">Career Paths</p>
+                            </div>
+                            <div class="bg-white/20 p-6 rounded-xl">
+                                <i class="fas fa-star text-4xl mb-3"></i>
+                                <h3 class="text-2xl font-bold">4.9/5</h3>
+                                <p class="text-purple-100">Student Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Everything You Need to Plan Your Future</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Our comprehensive platform combines AI technology with expert guidance to help you make informed career decisions.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl hover-scale">
+                    <div class="bg-purple-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI-Powered Recommendations</h3>
+                    <p class="text-gray-600">
+                        Advanced algorithms analyze your aptitude test results to suggest personalized career paths and courses.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl hover-scale">
+                    <div class="bg-blue-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-university text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">University Mapping</h3>
+                    <p class="text-gray-600">
+                        Find universities that offer your ideal programs with detailed admission requirements and rankings.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl hover-scale">
+                    <div class="bg-green-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-route text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Career Alignment</h3>
+                    <p class="text-gray-600">
+                        Match your strengths and interests with real-world careers, including salary insights and growth prospects.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl hover-scale">
+                    <div class="bg-orange-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Peer Support</h3>
+                    <p class="text-gray-600">
+                        Connect with students on similar paths, share experiences, and get advice from those who've been there.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+                <p class="text-xl text-gray-600">Three simple steps to discover your ideal career path</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-purple-600 text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">
+                        1
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Take the Quiz</h3>
+                    <p class="text-gray-600">
+                        Answer questions about your interests, skills, and preferences. It takes just 10 minutes.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-purple-600 text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">
+                        2
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Get Your Results</h3>
+                    <p class="text-gray-600">
+                        Receive personalized recommendations for courses, careers, and universities matched to your profile.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-purple-600 text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">
+                        3
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Plan Your Path</h3>
+                    <p class="text-gray-600">
+                        Use your dashboard to explore options, connect with peers, and take the next steps in your journey.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="quiz.html" class="inline-block bg-purple-600 text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition">
+                    Start Your Journey Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Students Say</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "CareerPath helped me discover my passion for data science. The recommendations were spot-on and I'm now studying at my dream university!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            SA
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Sarah Anderson</h4>
+                            <p class="text-sm text-gray-500">Computer Science Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "I was confused about which field to choose. This platform gave me clarity and connected me with others on the same path."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            MP
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Michael Park</h4>
+                            <p class="text-sm text-gray-500">Engineering Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "The AI recommendations opened my eyes to career options I never considered. Highly recommend to all students!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            EC
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Emma Chen</h4>
+                            <p class="text-sm text-gray-500">Business Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-compass text-purple-400 text-2xl mr-2"></i>
+                        <span class="text-2xl font-bold">Aptiva</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Empowering students to find their perfect career journey through AI-powered guidance.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="landing.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="quiz.html" class="hover:text-white transition">Take Quiz</a></li>
+                        <li><a href="dashboard.html" class="hover:text-white transition">Dashboard</a></li>
+                        <li><a href="forum.html" class="hover:text-white transition">Community</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">How It Works</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQs</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Aptiva. All rights reserved. | Demo Prototype</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

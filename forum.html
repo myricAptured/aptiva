@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum - Aptiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .post-hover {
+            transition: all 0.2s ease;
+        }
+        .post-hover:hover {
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-compass text-purple-600 text-2xl mr-2"></i>
+                    <span class="text-2xl font-bold text-gray-900">Aptiva</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="landing.html" class="text-gray-600 hover:text-purple-600 transition">Home</a>
+                    <a href="quiz.html" class="text-gray-600 hover:text-purple-600 transition">Take Quiz</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-purple-600 transition">Dashboard</a>
+                    <a href="forum.html" class="text-purple-600 font-medium">Community</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Forum Header -->
+    <section class="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">Community Forum</h1>
+            <p class="text-xl text-purple-100">Connect with peers, share experiences, and get advice on your career journey</p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Main Forum Content -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- New Post Button -->
+                <div class="bg-white rounded-xl shadow-sm p-4">
+                    <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                        <i class="fas fa-plus mr-2"></i>Create New Post
+                    </button>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="bg-white rounded-xl shadow-sm p-2">
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-purple-600 text-white py-2 rounded-lg font-semibold">
+                            <i class="fas fa-fire mr-2"></i>Hot
+                        </button>
+                        <button class="flex-1 text-gray-600 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                            <i class="fas fa-clock mr-2"></i>Recent
+                        </button>
+                        <button class="flex-1 text-gray-600 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-up mr-2"></i>Top
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Forum Posts -->
+                <div class="space-y-4">
+                    <!-- Post 1 -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 post-hover cursor-pointer">
+                        <div class="flex items-start">
+                            <div class="mr-4 flex flex-col items-center">
+                                <button class="text-gray-400 hover:text-purple-600">
+                                    <i class="fas fa-arrow-up text-xl"></i>
+                                </button>
+                                <span class="font-bold text-lg text-gray-700 my-1">42</span>
+                                <button class="text-gray-400 hover:text-purple-600">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                </button>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm mr-2">
+                                        SK
+                                    </div>
+                                    <span class="font-semibold text-gray-900">Sarah K.</span>
+                                    <span class="text-gray-500 text-sm ml-2">• 3 hours ago</span>
+                                    <span class="ml-auto">
+                                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">Computer Science</span>
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                                    How do I choose between MIT and Stanford for CS?
+                                </h3>
+                                <p class="text-gray-600 mb-4">
+                                    I got accepted into both MIT and Stanford for Computer Science and I'm having a really hard time deciding. 
+                                    MIT has an amazing reputation for engineering, but Stanford's location in Silicon Valley seems perfect for tech. 
+                                    Anyone have experience with either program or advice on how to decide?
+                                </p>
+                                <div class="flex items-center gap-4 text-sm text-gray-500">
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="far fa-comment mr-1"></i>28 comments
+                                    </button>
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="far fa-bookmark mr-1"></i>Save
+                                    </button>
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="fas fa-share mr-1"></i>Share
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 2 -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 post-hover cursor-pointer">
+                        <div class="flex items-start">
+                            <div class="mr-4 flex flex-col items-center">
+                                <button class="text-gray-400 hover:text-purple-600">
+                                    <i class="fas fa-arrow-up text-xl"></i>
+                                </button>
+                                <span class="font-bold text-lg text-gray-700 my-1">35</span>
+                                <button class="text-gray-400 hover:text-purple-600">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                </button>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm mr-2">
+                                        MR
+                                    </div>
+                                    <span class="font-semibold text-gray-900">Michael R.</span>
+                                    <span class="text-gray-500 text-sm ml-2">• 5 hours ago</span>
+                                    <span class="ml-auto">
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">Data Science</span>
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                                    Best online courses for learning Python for data analysis?
+                                </h3>
+                                <p class="text-gray-600 mb-4">
+                                    I'm planning to major in Data Science but I want to get a head start on learning Python. 
+                                    What are the best online courses you've taken? I'm looking for something beginner-friendly 
+                                    but that also covers data analysis libraries like pandas and numpy.
+                                </p>
+                                <div class="flex items-center gap-4 text-sm text-gray-500">
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="far fa-comment mr-1"></i>15 comments
+                                    </button>
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="far fa-bookmark mr-1"></i>Save
+                                    </button>
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="fas fa-share mr-1"></i>Share
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 3 -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 post-hover cursor-pointer">
+                        <div class="flex items-start">
+                            <div class="mr-4 flex flex-col items-center">
+                                <button class="text-gray-400 hover:text-purple-600">
+                                    <i class="fas fa-arrow-up text-xl"></i>
+                                </button>
+                                <span class="font-bold text-lg text-gray-700 my-1">58</span>
+                                <button class="text-gray-400 hover:text-purple-600">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                </button>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white font-semibold text-sm mr-2">
+                                        EC
+                                    </div>
+                                    <span class="font-semibold text-gray-900">Emma C.</span>
+                                    <span class="text-gray-500 text-sm ml-2">• 1 day ago</span>
+                                    <span class="ml-auto">
+                                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Career Advice</span>
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                                    <i class="fas fa-fire text-orange-500 mr-2"></i>
+                                    Just got my first internship offer! Here's what helped me
+                                </h3>
+                                <p class="text-gray-600 mb-4">
+                                    After months of applications and interviews, I finally got an offer for a software engineering internship! 
+                                    Here are my top tips: 1) Start applying early 2) Practice LeetCode problems 3) Build personal projects 
+                                    4) Network on LinkedIn 5) Don't give up after rejections. Happy to answer any questions!
+                                </p>
+                                <div class="flex items-center gap-4 text-sm text-gray-500">
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="far fa-comment mr-1"></i>42 comments
+                                    </button>
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="far fa-bookmark mr-1"></i>Save
+                                    </button>
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="fas fa-share mr-1"></i>Share
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 4 -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 post-hover cursor-pointer">
+                        <div class="flex items-start">
+                            <div class="mr-4 flex flex-col items-center">
+                                <button class="text-gray-400 hover:text-purple-600">
+                                    <i class="fas fa-arrow-up text-xl"></i>
+                                </button>
+                                <span class="font-bold text-lg text-gray-700 my-1">21</span>
+                                <button class="text-gray-400 hover:text-purple-600">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                </button>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center text-white font-semibold text-sm mr-2">
+                                        DL
+                                    </div>
+                                    <span class="font-semibold text-gray-900">David L.</span>
+                                    <span class="text-gray-500 text-sm ml-2">• 2 days ago</span>
+                                    <span class="ml-auto">
+                                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded">Engineering</span>
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                                    Is mechanical engineering still a good career path?
+                                </h3>
+                                <p class="text-gray-600 mb-4">
+                                    With all the hype around software and AI, I'm wondering if mechanical engineering is still a solid choice. 
+                                    I'm really interested in robotics and automation but worried about job prospects. Anyone working in MechE 
+                                    who can share their experience?
+                                </p>
+                                <div class="flex items-center gap-4 text-sm text-gray-500">
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="far fa-comment mr-1"></i>19 comments
+                                    </button>
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="far fa-bookmark mr-1"></i>Save
+                                    </button>
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="fas fa-share mr-1"></i>Share
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 5 -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 post-hover cursor-pointer">
+                        <div class="flex items-start">
+                            <div class="mr-4 flex flex-col items-center">
+                                <button class="text-gray-400 hover:text-purple-600">
+                                    <i class="fas fa-arrow-up text-xl"></i>
+                                </button>
+                                <span class="font-bold text-lg text-gray-700 my-1">67</span>
+                                <button class="text-gray-400 hover:text-purple-600">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                </button>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center text-white font-semibold text-sm mr-2">
+                                        JW
+                                    </div>
+                                    <span class="font-semibold text-gray-900">Jessica W.</span>
+                                    <span class="text-gray-500 text-sm ml-2">• 3 days ago</span>
+                                    <span class="ml-auto">
+                                        <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2 py-1 rounded">Success Story</span>
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                                    <i class="fas fa-trophy text-yellow-500 mr-2"></i>
+                                    From undecided to accepted: My journey finding the right major
+                                </h3>
+                                <p class="text-gray-600 mb-4">
+                                    A year ago I had no idea what I wanted to study. Aptiva's aptitude test helped me discover 
+                                    I'm great at both creative and analytical work. I'm now accepted to study UX Design at a top program! 
+                                    If you're feeling lost, don't worry - taking tests and exploring different fields really helps.
+                                </p>
+                                <div class="flex items-center gap-4 text-sm text-gray-500">
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="far fa-comment mr-1"></i>31 comments
+                                    </button>
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="far fa-bookmark mr-1"></i>Save
+                                    </button>
+                                    <button class="hover:text-purple-600 transition">
+                                        <i class="fas fa-share mr-1"></i>Share
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More -->
+                <div class="text-center">
+                    <button class="bg-white border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition">
+                        Load More Posts
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1 space-y-6">
+                <!-- Forum Guidelines -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">
+                        <i class="fas fa-info-circle text-purple-600 mr-2"></i>Forum Guidelines
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Be respectful and supportive</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Stay on topic and relevant</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>No spam or self-promotion</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Share genuine experiences</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Popular Topics -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Popular Topics</h3>
+                    <div class="space-y-2">
+                        <button class="w-full text-left px-4 py-2 rounded-lg hover:bg-purple-50 text-gray-700 hover:text-purple-600 transition">
+                            <i class="fas fa-hashtag text-purple-600 mr-2"></i>Computer Science
+                        </button>
+                        <button class="w-full text-left px-4 py-2 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition">
+                            <i class="fas fa-hashtag text-blue-600 mr-2"></i>Career Advice
+                        </button>
+                        <button class="w-full text-left px-4 py-2 rounded-lg hover:bg-green-50 text-gray-700 hover:text-green-600 transition">
+                            <i class="fas fa-hashtag text-green-600 mr-2"></i>Engineering
+                        </button>
+                        <button class="w-full text-left px-4 py-2 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-600 transition">
+                            <i class="fas fa-hashtag text-orange-600 mr-2"></i>Data Science
+                        </button>
+                        <button class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 text-gray-700 hover:text-pink-600 transition">
+                            <i class="fas fa-hashtag text-pink-600 mr-2"></i>University Life
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Community Stats -->
+                <div class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl shadow-sm p-6 text-white">
+                    <h3 class="text-lg font-bold mb-4">Community Stats</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="text-3xl font-bold">15.2K</div>
+                            <div class="text-purple-200 text-sm">Active Members</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold">3.8K</div>
+                            <div class="text-purple-200 text-sm">Posts This Week</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold">24K</div>
+                            <div class="text-purple-200 text-sm">Questions Answered</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Contributors -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">
+                        <i class="fas fa-crown text-yellow-500 mr-2"></i>Top Contributors
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold mr-3">
+                                AK
+                            </div>
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-900 text-sm">Alex Kumar</div>
+                                <div class="text-xs text-gray-500">482 helpful posts</div>
+                            </div>
+                            <i class="fas fa-medal text-yellow-500 text-xl"></i>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold mr-3">
+                                LT
+                            </div>
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-900 text-sm">Lisa Thompson</div>
+                                <div class="text-xs text-gray-500">356 helpful posts</div>
+                            </div>
+                            <i class="fas fa-medal text-gray-400 text-xl"></i>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-semibold mr-3">
+                                RG
+                            </div>
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-900 text-sm">Ryan Garcia</div>
+                                <div class="text-xs text-gray-500">298 helpful posts</div>
+                            </div>
+                            <i class="fas fa-medal text-orange-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-400">
+                <p>&copy; 2026 Aptiva. All rights reserved. | Demo Prototype</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

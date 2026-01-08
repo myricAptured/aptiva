@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptitude Quiz - Aptiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+        .question-slide {
+            display: none;
+            animation: slideIn 0.4s ease;
+        }
+        .question-slide.active {
+            display: block;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .likert-btn {
+            transition: all 0.2s ease;
+        }
+        .likert-btn:hover {
+            transform: scale(1.05);
+        }
+        .likert-btn.selected {
+            background: #7c3aed;
+            color: white;
+            border-color: #7c3aed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-compass text-purple-600 text-2xl mr-2"></i>
+                    <span class="text-2xl font-bold text-gray-900">Aptiva</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="landing.html" class="text-gray-600 hover:text-purple-600 transition">Home</a>
+                    <a href="quiz.html" class="text-purple-600 font-medium">Take Quiz</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-purple-600 transition">Dashboard</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-purple-600 transition">Community</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Quiz Container -->
+    <div class="min-h-screen py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Progress Bar -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-sm font-semibold text-gray-600">Career Aptitude Assessment</h2>
+                    <span class="text-sm font-semibold text-gray-600">
+                        Question <span id="current-question">1</span> of <span id="total-questions">15</span>
+                    </span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div id="progress-bar" class="progress-bar bg-gradient-to-r from-purple-500 to-purple-700 h-3 rounded-full" style="width: 6.67%"></div>
+                </div>
+            </div>
+
+            <!-- Quiz Card -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <!-- Question 1 -->
+                <div class="question-slide active" data-question="1">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I enjoy solving complex mathematical problems</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-slide" data-question="2">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I prefer working with people over working with data</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-slide" data-question="3">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I am creative and enjoy artistic activities</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-slide" data-question="4">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I like to organize and plan events or projects</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-slide" data-question="5">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I am interested in understanding how things work mechanically</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="question-slide" data-question="6">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I enjoy helping others solve their problems</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="question-slide" data-question="7">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I prefer working independently rather than in teams</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="question-slide" data-question="8">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I am fascinated by scientific research and experiments</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="question-slide" data-question="9">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I enjoy public speaking and presenting ideas</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="question-slide" data-question="10">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I am good at analyzing data and finding patterns</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="question-slide" data-question="11">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I enjoy writing and expressing ideas through words</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="question-slide" data-question="12">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I am interested in business and entrepreneurship</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="question-slide" data-question="13">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I like working with my hands and building things</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="question-slide" data-question="14">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I am passionate about social causes and making a difference</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="question-slide" data-question="15">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">I enjoy learning new technologies and digital tools</h3>
+                    <p class="text-gray-600 mb-8">Select how much you agree with this statement</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="1">
+                            <div class="text-2xl mb-2">😟</div>
+                            <div class="font-semibold">Strongly Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="2">
+                            <div class="text-2xl mb-2">🙁</div>
+                            <div class="font-semibold">Disagree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="3">
+                            <div class="text-2xl mb-2">😐</div>
+                            <div class="font-semibold">Neutral</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="4">
+                            <div class="text-2xl mb-2">🙂</div>
+                            <div class="font-semibold">Agree</div>
+                        </button>
+                        <button class="likert-btn border-2 border-gray-300 rounded-lg py-4 px-6 text-center hover:border-purple-500" data-value="5">
+                            <div class="text-2xl mb-2">😄</div>
+                            <div class="font-semibold">Strongly Agree</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between mt-12 pt-8 border-t border-gray-200">
+                    <button id="prev-btn" class="px-8 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 hover:bg-gray-50 transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        <i class="fas fa-arrow-left mr-2"></i>Previous
+                    </button>
+                    <button id="next-btn" class="px-8 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        Next<i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <a id="submit-btn" href="results.html" class="hidden px-8 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition">
+                        View Results<i class="fas fa-check ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>
