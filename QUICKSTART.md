@@ -1,4 +1,4 @@
-# 🚀 Quick Start Guide - CareerPath Prototype
+# 🚀 Quick Start Guide - Aptiva Prototype
 
 ## Getting Started in 3 Steps
 
@@ -163,7 +163,7 @@ The prototype consists of 5 main pages:
 ## 🎓 Presentation Script Outline
 
 **Introduction (Landing Page)**
-"CareerPath is a comprehensive career guidance platform for students. Our AI-powered system helps students discover their ideal career paths through aptitude testing, personalized recommendations, and peer support."
+"Aptiva is a comprehensive career guidance platform for students. Our AI-powered system helps students discover their ideal career paths through aptitude testing, personalized recommendations, and peer support."
 
 **Quiz Demo**
 "Students take a 15-question aptitude assessment with Likert scale responses. The system tracks progress and provides immediate feedback."

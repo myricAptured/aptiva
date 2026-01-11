@@ -1,4 +1,4 @@
-# 📊 CareerPath Prototype - Project Summary
+# 📊 Aptiva Prototype - Project Summary
 
 ## Project Deliverables
 

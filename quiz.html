@@ -6,43 +6,7 @@
     <title>Aptitude Quiz - Aptiva</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .progress-bar {
-            transition: width 0.3s ease;
-        }
-        .question-slide {
-            display: none;
-            animation: slideIn 0.4s ease;
-        }
-        .question-slide.active {
-            display: block;
-        }
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        .likert-btn {
-            transition: all 0.2s ease;
-        }
-        .likert-btn:hover {
-            transform: scale(1.05);
-        }
-        .likert-btn.selected {
-            background: #7c3aed;
-            color: white;
-            border-color: #7c3aed;
-        }
-    </style>
+    <link rel="stylesheet" href="css/quiz.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->

@@ -6,19 +6,7 @@
     <title>Student Dashboard - Aptiva</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
-        }
-    </style>
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -209,13 +197,13 @@
                         <div class="border border-gray-200 rounded-xl p-6 card-hover cursor-pointer">
                             <div class="flex justify-between items-start mb-3">
                                 <div>
-                                    <h3 class="text-lg font-bold text-gray-900 mb-1">MIT</h3>
-                                    <p class="text-sm text-gray-600">Massachusetts Institute of Technology</p>
+                                    <h3 class="text-lg font-bold text-gray-900 mb-1">UP Diliman</h3>
+                                    <p class="text-sm text-gray-600">University of the Philippines Diliman</p>
                                 </div>
                                 <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">96% Match</span>
                             </div>
                             <div class="flex gap-4 text-sm text-gray-600">
-                                <span><i class="fas fa-map-marker-alt mr-1 text-purple-600"></i>Cambridge, MA</span>
+                                <span><i class="fas fa-map-marker-alt mr-1 text-purple-600"></i>Quezon City, Metro Manila</span>
                                 <span><i class="fas fa-graduation-cap mr-1 text-purple-600"></i>Computer Science</span>
                             </div>
                         </div>
@@ -223,13 +211,13 @@
                         <div class="border border-gray-200 rounded-xl p-6 card-hover cursor-pointer">
                             <div class="flex justify-between items-start mb-3">
                                 <div>
-                                    <h3 class="text-lg font-bold text-gray-900 mb-1">Stanford University</h3>
-                                    <p class="text-sm text-gray-600">Leading research university</p>
+                                    <h3 class="text-lg font-bold text-gray-900 mb-1">Ateneo de Manila</h3>
+                                    <p class="text-sm text-gray-600">Ateneo de Manila University</p>
                                 </div>
                                 <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">94% Match</span>
                             </div>
                             <div class="flex gap-4 text-sm text-gray-600">
-                                <span><i class="fas fa-map-marker-alt mr-1 text-purple-600"></i>Stanford, CA</span>
+                                <span><i class="fas fa-map-marker-alt mr-1 text-purple-600"></i>Quezon City, Metro Manila</span>
                                 <span><i class="fas fa-graduation-cap mr-1 text-purple-600"></i>Engineering</span>
                             </div>
                         </div>
@@ -237,13 +225,13 @@
                         <div class="border border-gray-200 rounded-xl p-6 card-hover cursor-pointer">
                             <div class="flex justify-between items-start mb-3">
                                 <div>
-                                    <h3 class="text-lg font-bold text-gray-900 mb-1">Carnegie Mellon</h3>
+                                    <h3 class="text-lg font-bold text-gray-900 mb-1">De La Salle University</h3>
                                     <p class="text-sm text-gray-600">Top CS and Engineering programs</p>
                                 </div>
                                 <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">93% Match</span>
                             </div>
                             <div class="flex gap-4 text-sm text-gray-600">
-                                <span><i class="fas fa-map-marker-alt mr-1 text-purple-600"></i>Pittsburgh, PA</span>
+                                <span><i class="fas fa-map-marker-alt mr-1 text-purple-600"></i>Malate, Manila</span>
                                 <span><i class="fas fa-graduation-cap mr-1 text-purple-600"></i>Software Engineering</span>
                             </div>
                         </div>
@@ -325,30 +313,30 @@
                         <div class="flex items-start">
                             <div class="bg-red-100 text-red-600 w-12 h-12 rounded-lg flex flex-col items-center justify-center mr-3 flex-shrink-0">
                                 <div class="text-xs font-semibold">JAN</div>
-                                <div class="text-lg font-bold">15</div>
+                                <div class="text-lg font-bold">31</div>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 text-sm">MIT Early Action</h4>
+                                <h4 class="font-semibold text-gray-900 text-sm">UP Diliman UPCAT</h4>
                                 <p class="text-xs text-gray-600">Application deadline</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-lg flex flex-col items-center justify-center mr-3 flex-shrink-0">
                                 <div class="text-xs font-semibold">FEB</div>
-                                <div class="text-lg font-bold">01</div>
+                                <div class="text-lg font-bold">15</div>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 text-sm">Stanford Regular</h4>
+                                <h4 class="font-semibold text-gray-900 text-sm">Ateneo ACET</h4>
                                 <p class="text-xs text-gray-600">Application deadline</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-lg flex flex-col items-center justify-center mr-3 flex-shrink-0">
                                 <div class="text-xs font-semibold">FEB</div>
-                                <div class="text-lg font-bold">15</div>
+                                <div class="text-lg font-bold">28</div>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 text-sm">Carnegie Mellon</h4>
+                                <h4 class="font-semibold text-gray-900 text-sm">DLSU DCAT</h4>
                                 <p class="text-xs text-gray-600">Application deadline</p>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-# CareerPath - Student Career Guidance Platform Prototype
+# Aptiva - Student Career Guidance Platform Prototype
 
 A visual and interactive prototype for a student career guidance platform featuring AI-powered aptitude testing, university recommendations, and peer support.
 
